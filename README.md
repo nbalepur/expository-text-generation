@@ -1,4 +1,6 @@
-# Expository Document Generation
+# Expository Text Generation
+
+This repository is the official implementation of "Expository Text Generation: Imitate, Retrieve, Paraphrase", which was accepted to EMNLP 2023
 
 ## Overview
 
