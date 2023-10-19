@@ -33,9 +33,9 @@ model_map = {
 }
 
 ds_map = {
-    'college': '../data/college',
-    'medicine': '../data/medicine',
-    'wikipedia': '../data/wikipedia'
+    'college': '../data/datasets/us_news',
+    'medicine': '../data/datasets/medline',
+    'wikipedia': '../data/datasets/wiki_cs'
 }
 
 # input / output
