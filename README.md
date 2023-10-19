@@ -86,7 +86,7 @@ You must also fill in the dictionary `model_map` with the names of the trained I
 
 ### Evaluation
 
-We also provide a script for the calculations for Traditional Metrics, Hallucinations, Entailment, and Contradictions. FactCC can be calculated by following the instructions [here](https://github.com/salesforce/factCC).
+We also provide a script for the calculations for Traditional Metrics, Entailment, and Contradictions. FactCC can be calculated by following the instructions [here](https://github.com/salesforce/factCC).
 
 First, navigate to `/eval/`. You can run the following command to calculate the traditional metrics and hallucinations for IRP, LED, and RAG:
 
