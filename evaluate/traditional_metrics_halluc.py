@@ -5,14 +5,17 @@ import pickle
 
 import os
 
-results_pref = "college with desc"
+results_pref = "college" + # can be 'college', 'medicine', or 'wiki' 
+"with desc" # can be 'with desc' or 'no desc'
+
+out_col = '' # column containing the ground truth
 
 if "cs history" in results_pref:
-    ds_name = "../data/wikipedia/"
+    ds_name = "../data/datasets/wiki_cs"
 if "medicine" in results_pref:
-    ds_name = "../data/medicine/"
+    ds_name = "../data/datasets/medline"
 if "college" in results_pref:
-    ds_name = "../data/college/"
+    ds_name = "../data/datasets/us_news"
 
 if "no" in results_pref:
     source_col_name = 'web_sentences_no_desc'
@@ -74,10 +77,4 @@ def evaluate_metrics(pred, true, source):
     print(f"Rouge:\n{rouge_vals}\n\nBleu:\n{bleu_vals}\n\nMeteor:{meteor_vals}\n\nLength: {avg_length}\n\nHallucinations: {halluc}")
 
 print("\n\nIRP")
-evaluate_metrics([x[0] for x in irp], test_data['output_aug'], test_data[source_col_name])
-
-print("\n\nLED")
-evaluate_metrics(led, test_data['output_aug'], test_data[source_col_name])
-
-print("\n\nRAG")
-evaluate_metrics(rag, test_data['output_aug'], test_data[source_col_name])
+evaluate_metrics([x[0] for x in irp], test_data[out_col], test_data[source_col_name])
