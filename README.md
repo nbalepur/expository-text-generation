@@ -6,7 +6,13 @@ This code contains the Imitate, Retrieve, Paraphrase (IRP) framework for exposit
 
 ## Data
 
-Before proceeding, please unzip the accompanying `data` folder in the supplementary materials, and drag it into the main `IRP` folder. Before training the Paraphraser, a custom dataset must be created. You can create this dataset by running the following command:
+Before proceeding, please unzip the accompanying datasets in the `data/dataset` folder. The first step is to create the `web_sentences_with_desc` and `web_sentences_no_desc` columns of the dataset, which can be done by retrieving information from the web. We provide a script to do so in the `data` folder, using the following command:
+
+```
+python scrape_web.py
+```
+
+Additionally, before training the Paraphraser, a custom dataset must be created. You can create this dataset by running the following command:
 
 ```
 python collect_paraphrase_data.py
