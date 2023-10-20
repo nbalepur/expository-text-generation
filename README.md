@@ -104,4 +104,4 @@ To calculate entailment and contradictions, run the following command:
 python nli.py
 ```
 
-In addition to `results_pref`, at the top of the file you must specify the name of the entailment classifier (`entailment_model`). We provide a training script for this classifier in `/train/train_nli.py`. If the paper is accepted, we will release our classifier (we cannot do this currently due to anonymity reasons).
+In addition to `results_pref`, at the top of the file you must specify the name of the entailment classifier (`entailment_model`). We provide a training script for this classifier in `/train/train_nli.py`
