@@ -2,6 +2,8 @@
 
 This repository is the official implementation of "Expository Text Generation: Imitate, Retrieve, Paraphrase", which was accepted to EMNLP 2023
 
+![Visualization of IRP](images/IRP.png)
+
 ## Overview
 
 This code contains the Imitate, Retrieve, Paraphrase (IRP) framework for expository document generation. The framework leverages a set of topic-related factual sentences and a user-specified prefix in order to generate an expository document.
