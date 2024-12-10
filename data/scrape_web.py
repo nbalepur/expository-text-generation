@@ -1,7 +1,7 @@
 import datasets
 from unidecode import unidecode
 
-banned_word = 'wikipedia' # word to exclude from URL
+banned_word = '' # word to exclude from URL
 out_dir = '' # output directory
 dataset_dir = '' # dataset directory
 
@@ -140,7 +140,7 @@ def shuffle_sentences(information):
     random.shuffle(all_sentences)
     return all_sentences
 
-columns = ['aspect', 'title', 'web_sentences_with_desc', 'web_sentences_no_desc', 'output', 'output_aug']
+columns = ['title', 'web_sentences_with_desc', 'web_sentences_no_desc', 'output', 'output_aug']
 new_dataset_train = {c: [] for c in columns}
 new_dataset_test = {c: [] for c in columns}
 
@@ -181,7 +181,9 @@ for idx in tqdm.tqdm(range(num_train)):
     new_dataset_train['web_sentences_with_desc'].append(general_sentences_leak)
     new_dataset_train['web_sentences_no_desc'].append(general_sentences)
 
+    print(new_dataset_train)
     time.sleep(10)
+    break
 
 for idx in tqdm.tqdm(range(num_test)):
 
@@ -215,8 +217,12 @@ for idx in tqdm.tqdm(range(num_test)):
     new_dataset_test['web_sentences_with_desc'].append(general_sentences_leak)
     new_dataset_test['web_sentences_no_desc'].append(general_sentences)
 
+    print(new_dataset_test)
+
     time.sleep(10)
+    break
 
 new_train, new_test = datasets.Dataset.from_dict(new_dataset_train), datasets.Dataset.from_dict(new_dataset_test)
 new_ds = datasets.DatasetDict({'train': new_train, 'test': new_test})
+print(new_ds)
 new_ds.save_to_disk(out_dir)
